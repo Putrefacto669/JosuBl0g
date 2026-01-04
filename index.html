@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blog personal retro sobre videojuegos, cultura gamer y cosas que me gustan">
+  <meta name="keywords" content="videojuegos, retro, gaming, blog, JosuBl0g, Bayonetta, RDR2, Hotline Miami">
+  <title>JosuBl0g</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/joystick.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+  <link rel="preload" href="images/retro_banner.gif" as="image">
+</head>
+<body>
+  <div class="crt">
+
+  <!-- ===== DECORACIONES GIF ===== -->
+  <div class="gif-decorations">
+    <img src="images/cat1.gif" alt="Gatito animado 1" class="gif-deco gif-1">
+    <img src="images/cat2.gif" alt="Gatito animado 2" class="gif-deco gif-2">
+    <img src="images/fire.gif" alt="Fuego animado" class="gif-deco gif-3">
+    <img src="images/skull.gif" alt="Calavera animada" class="gif-deco gif-4">
+    <img src="images/star.gif" alt="Estrella brillante" class="gif-deco gif-5">
+    <img src="images/heart.gif" alt="Corazón latiendo" class="gif-deco gif-6">
+    <img src="images/pixel_heart.gif" alt="Corazón pixelado" class="gif-deco gif-7">
+    <img src="images/nyan_cat.gif" alt="Nyan Cat" class="gif-deco gif-8">
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" role="banner">
+    <div class="header-content">
+      <img src="images/retro_banner.gif" alt="JosuBl0g - Blog Retro Gaming" class="banner">
+      <h1>¡OE QUE NOTA, BIENVENIDO!</h1>
+      <p class="subtitle">Hecho pq si</p>
+      
+      <!-- Contador de visitas -->
+      <div class="visitor-counter">
+        <img src="images/counter_bg.gif" alt="Contador">
+        <span class="counter-number">001234</span>
+        <p class="counter-text">Visitantes desde 2024</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== WIDGETS FLOTANTES ===== -->
+  <aside class="widgets">
+    <div class="widget music-widget">
+      <img src="images/music_note.gif" alt="Nota musical">
+      <p>🎵 <span id="nowPlaying">Hotline Miami - Hydrogen</span></p>
+    </div>
+    
+    <div class="widget time-widget">
+      <img src="images/clock.gif" alt="Reloj animado">
+      <p>🕐 <span id="currentTime">Cargando...</span></p>
+    </div>
+  </aside>
+
+  <!-- ===== MARQUEE INFERIOR ===== -->
+  <div class="marquee-container">
+    <marquee behavior="scroll" direction="left" scrollamount="3">
+      🐱🌟 ¡Gracias por visitar esto mae! 👾 — ¡Lavate el Prepucio! 🌟🐱 • 
+      🎮 Jugando ahora: God of War • 
+      🎵 Escuchando: Synthwave • 
+      📅 Hoy es: <span id="marqueeDate"></span> •
+      💀 Este sitio está mejor visto en 800x600 •
+      🐾 Los gatitos GIF te dan la bienvenida •
+    </marquee>
+  </div>
+
+  <hr class="fancy-hr">
+
+  <!-- ===== MENÚ DE NAVEGACIÓN ===== -->
+  <nav class="menu" role="navigation">
+    <ul>
+      <li><a href="#favorites">🎮 Favoritos</a></li>
+      <li><a href="#pensamientos">💭 Pensamientos</a></li>
+      <li><a href="#multimedia">🎥 Multimedia</a></li>
+      <li><a href="#links">🔗 Links</a></li>
+      <li><a href="#about">👤 Sobre mí</a></li>
+      <li><a href="#contact">📧 Contacto</a></li>
+    </ul>
+    
+    <!-- Botón tema -->
+    <button id="themeToggle" class="theme-toggle" title="Cambiar tema">
+      <span class="theme-icon">🌙</span>
+    </button>
+  </nav>
+
+  <hr class="fancy-hr">
+
+  <!-- ===== SECCIÓN "SOBRE MÍ" ===== -->
+  <section id="about" class="about-section">
+    <h2>👾 ¿QUIÉN SOY?</h2>
+    <div class="about-content">
+      <div class="avatar-container">
+        <img src="images/avatar.gif" alt="Mi avatar retro" class="avatar">
+        <div class="avatar-badge">
+          <img src="images/online.gif" alt="En línea">
+          <span>ONLINE</span>
+        </div>
+      </div>
+      <div class="bio">
+        <p>¡Oña! Soy <strong>Josu</strong>, Alguien que esta un poco aburrido de las vacaciones de la universidad.</p>
+        <p>🎮 <strong>Juego desde</strong> Sepam la bola</p>
+        <p>❤️ <strong>Géneros favoritos:</strong> Acción, Hack n' Slash, Shooters</p>
+        <p>🏆 <strong>Logro más orgulloso:</strong> No Tener Hijos</p>
+        <p>💾 <strong>Setup actual:</strong> Una Bomba Atomica</p>
+        
+        <div class="current-status">
+          <img src="images/playing.gif" alt="Jugando ahora">
+          <span><strong>Ahora mismo:</strong> Debes en cuando durmiendo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECCIÓN FAVORITOS ===== -->
+  <section id="favorites" class="favorites-section">
+    <div class="section-header">
+      <img src="images/heart_animated.gif" alt="Corazón animado">
+      <h2>🖤 MIS JUEGOS FAVORITOS</h2>
+      <img src="images/heart_animated.gif" alt="Corazón animado">
+    </div>
+
+    <div class="games-grid">
+      <!-- BAYONETTA -->
+      <article class="game-card" id="bayonetta">
+        <div class="game-header">
+          <img src="images/bayonetta_logo.png" alt="Bayonetta Logo" class="game-logo">
+          <div class="game-rating">
+            <span class="rating-stars">★★★★★</span>
+            <span class="rating-text">10/10</span>
+          </div>
+        </div>
+        <div class="game-content">
+          <h3>Bayonetta</h3>
+          <p class="game-genre">Hack n' Slash • PlatinumGames • 2009</p>
+          <p class="game-description">Una bruja que hace poses sugerentes.</p>
+          
+          <div class="game-highlights">
+            <span class="highlight">🔥 Combate frenético</span>
+            <span class="highlight">👠 Estilo sobre todo</span>
+            <span class="highlight">🎵 Banda sonora épica</span>
+          </div>
+          
+          <div class="game-screenshots">
+            <img src="images/bayonetta_screenshot1.gif" alt="Bayonetta gameplay 1" loading="lazy">
+            <img src="images/bayonetta_screenshot2.gif" alt="Bayonetta gameplay 2" loading="lazy">
+          </div>
+          
+          <div class="game-footer">
+            <span class="play-time">⏱️2 horas</span>
+            <span class="completion">🏆 20% completado</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- RED DEAD REDEMPTION II -->
+      <article class="game-card" id="rdr2">
+        <div class="game-header">
+          <img src="images/Red-Dead-Redemption-II.png" alt="RDR2 Logo" class="game-logo">
+          <div class="game-rating">
+            <span class="rating-stars">★★★★★</span>
+            <span class="rating-text">11/10</span>
+          </div>
+        </div>
+        <div class="game-content">
+          <h3>Red Dead Redemption II</h3>
+          <p class="game-genre">Western • Rockstar • 2018</p>
+          <p class="game-description">Arthur Morgan es el mejor protagonista de la historia de los videojuegos. Punto. Lloré como un bebé y no me avergüenzo de admitirlo.</p>
+          
+          <div class="game-highlights">
+            <span class="highlight">🤠 Mundo abierto inmenso</span>
+            <span class="highlight">😭 Historia emocional</span>
+            <span class="highlight">🐎 Caballos con personalidad</span>
+          </div>
+          
+          <div class="game-screenshots">
+            <img src="images/rdr2_screenshot1.jpg" alt="RDR2 paisaje" loading="lazy">
+            <img src="images/rdr2_screenshot2.jpg" alt="Arthur Morgan" loading="lazy">
+          </div>
+          
+          <div class="game-footer">
+            <span class="play-time">⏱️ 120+ horas</span>
+            <span class="completion">🏆 100% completado</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- HOTLINE MIAMI 1 -->
+      <article class="game-card" id="hm1">
+        <div class="game-header">
+          <img src="images/hotline-miami.png" alt="Hotline Miami Logo" class="game-logo">
+          <div class="game-rating">
+            <span class="rating-stars">★★★★★</span>
+            <span class="rating-text">9/10</span>
+          </div>
+        </div>
+        <div class="game-content">
+          <h3>Hotline Miami</h3>
+          <p class="game-genre">Top-down Shooter • Dennaton • 2012</p>
+          <p class="game-description">Violencia pixelada al ritmo del synthwave. Casi me da un aneurisma intentando platinarlo, pero valió cada maldito segundo.</p>
+          
+          <div class="game-highlights">
+            <span class="highlight">🎵 OST INCREÍBLE</span>
+            <span class="highlight">💀 Dificultad brutal</span>
+            <span class="highlight">🎭 Historia psicodélica</span>
+          </div>
+          
+          <div class="game-screenshots">
+            <img src="images/hm1_screenshot1.gif" alt="Hotline Miami 1 gameplay" loading="lazy">
+            <img src="images/hm1_screenshot2.jpg" alt="Hotline Miami 1 estilo" loading="lazy">
+          </div>
+          
+          <div class="game-footer">
+            <span class="play-time">⏱️ 10+ horas</span>
+            <span class="completion">🏆 100% completado</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- HOTLINE MIAMI 2 -->
+      <article class="game-card" id="hm2">
+        <div class="game-header">
+          <img src="images/hlm-wrong-number.png" alt="Hotline Miami 2 Logo" class="game-logo">
+          <div class="game-rating">
+            <span class="rating-stars">★★★★☆</span>
+            <span class="rating-text">8.5/10</span>
+          </div>
+        </div>
+        <div class="game-content">
+          <h3>Hotline Miami 2: Wrong Number</h3>
+          <p class="game-genre">Top-down Shooter • Dennaton • 2015</p>
+          <p class="game-description">Más difícil, más sangriento, más lore. Nivel de frustración: "tirar el teclado por la ventana".</p>
+          
+          <div class="game-highlights">
+            <span class="highlight">🔫 Más armas</span>
+            <span class="highlight">🎬 Estilo cinematográfico</span>
+            <span class="highlight">🧠 Lore complejo</span>
+          </div>
+          
+          <div class="game-screenshots">
+            <img src="images/hm2_screenshot1.gif" alt="Hotline Miami 2 gameplay" loading="lazy">
+            <img src="images/hm2_screenshot2.gif" alt="Hotline Miami 2 escena" loading="lazy">
+          </div>
+          
+          <div class="game-footer">
+            <span class="play-time">⏱️ 10+ horas</span>
+            <span class="completion">🏆 100% completado</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- GOD OF WAR 2018 -->
+      <article class="game-card" id="gow2018">
+        <div class="game-header">
+          <img src="images/god_of_war_2018_logo.png" alt="God of War Logo" class="game-logo">
+          <div class="game-rating">
+            <span class="rating-stars">★★★★★</span>
+            <span class="rating-text">12/10</span>
+          </div>
+        </div>
+        <div class="game-content">
+          <h3>God of War (2018)</h3>
+          <p class="game-genre">Acción-Aventura • Santa Monica • 2018</p>
+          <p class="game-description">Kratos como papá. No solo es un juego, es una experiencia. Me hubiese gustado platinarlo pero mi PS4 dijo "no más".</p>
+          
+          <div class="game-highlights">
+            <span class="highlight">👨‍👦 Historia paternal</span>
+            <span class="highlight">⚔️ Combate satisfactorio</span>
+            <span class="highlight">🏔️ Mundo nórdico hermoso</span>
+          </div>
+          
+          <div class="game-screenshots">
+            <img src="images/gow2018_screenshot1.gif" alt="God of War 2018 Kratos" loading="lazy">
+            <img src="images/gow2018_screenshot2.gif" alt="God of War 2018 paisaje" loading="lazy">
+          </div>
+          
+          <div class="game-footer">
+            <span class="play-time">⏱️ 60+ horas</span>
+            <span class="completion">🏆 66% completado</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== SECCIÓN PENSAMIENTOS ===== -->
+  <section id="pensamientos" class="thoughts-section">
+    <h2>💭 PENSAMIENTOS ALEATORIOS</h2>
+    
+    <div class="thoughts-container">
+      <div class="thought">
+        <div class="thought-header">
+          <img src="images/thought_bubble.gif" alt="Burbuja de pensamiento">
+          <span class="thought-date">15/11/2024</span>
+        </div>
+        <p>"¿Por qué los juegos modernos tienen que instalar 100GB de datos pero los retro cabían en 700MB y eran igual de buenos?"</p>
+      </div>
+      
+      <div class="thought">
+        <div class="thought-header">
+          <img src="images/thought_bubble.gif" alt="Burbuja de pensamiento">
+          <span class="thought-date">10/11/2024</span>
+        </div>
+        <p>"Extraño cuando los juegos no tenían microtransacciones y el único DLC era 'jugar más'."</p>
+      </div>
+      
+      <div class="thought">
+        <div class="thought-header">
+          <img src="images/thought_bubble.gif" alt="Burbuja de pensamiento">
+          <span class="thought-date">05/11/2024</span>
+        </div>
+        <p>"SEXOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECCIÓN LINKS ===== -->
+  <section id="links" class="links-section">
+    <h2>🔗 LINKS INTERESANTES</h2>
+    
+    <div class="links-grid">
+      <a href="https://github.com/Putrefacto669/" class="link-card" target="_blank">
+        <img src="images/link1.gif" alt="Disquete animado">
+        <h4>My Abandonware</h4>
+        <p>Perfil de Github Abandonado xd</p>
+      </a>
+      
+      <a href="https://archive.org/details/softwarelibrary" class="link-card" target="_blank">
+        <img src="images/link2.gif" alt="Internet Archive">
+        <h4>Internet Archive</h4>
+        <p>Biblioteca digital gigante</p>
+      </a>
+      
+      <a href="https://www.gog.com/" class="link-card" target="_blank">
+        <img src="images/link3.gif" alt="GOG logo">
+        <h4>GOG.com</h4>
+        <p>Juegos retro sin DRM</p>
+      </a>
+    
+    <!-- Webring retro -->
+    <div class="webring">
+      <img src="images/webring.gif" alt="Webring retro">
+      <p>Parte del <a href="#" target="_blank">Retro Webring</a></p>
+      <p><a href="#">← Sitio anterior</a> | <a href="#">Siguiente sitio →</a></p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>JosuBl0g</h4>
+        <p>Desde 2024</p>
+        <p>hECHO SOLO para pasar el rato/p>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Contacto</h4>
+        <p>Email: <a href="josuurbina75@gmail.com">josuurbina75@gmail.com</a></p>
+        <p>Steam: <a href="#">josuurbina75</a></p>
+        <p>Discord: xx666josux</p>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Estadísticas</h4>
+        <p>Juegos en la lista: <strong>5</strong></p>
+        <p>Horas jugadas: <strong>305+</strong></p>
+        <p>Gatitos GIF: <strong>8</strong></p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>© 2024 JosuBl0g - Todos los derechos reservados (o no, esto es internet)</p>
+      <p>Última actualización: <span id="lastUpdate">15/11/2024</span></p>
+      <p class="footer-note">Este sitio funciona mejor con Internet Explorer 6.0 (es broma, por favor no uses IE)</p>
+    </div>
+  </div> <!-- Cierre del div .crt -->
+
+  <!-- ===== MÚSICA MIDI ===== -->
+  <audio id="bgMusic" loop>
+    <source src="audio/background.midi">
+    Tu navegador no soporta MIDI (¡qué pena!).
+  </audio>
+
+  <!-- BOTÓN MUTE -->
+  <button id="muteButton" class="mute-button" title="Mute / Unmute (Click para activar música)">
+    🔊
+  </button>
+
+  <!-- Botón volver arriba -->
+  <button id="backToTop" class="back-to-top" title="Volver arriba">
+    <img src="images/arrow_up.gif" alt="Flecha arriba">
+  </button>
+  
+<!-- ===== BANNER FINAL "VISITA OTRA VEZ" ===== -->
+<div class="final-banner">
+  <!-- Línea decorativa superior -->
+  <div class="banner-top-line">
+    <img src="images/star.gif" alt="Estrella">
+    <img src="images/heart.gif" alt="Corazón">
+    <img src="images/star.gif" alt="Estrella">
+  </div>
+  
+  <!-- Banner principal -->
+  <img src="images/final_banner.gif" alt="¡Gracias por visitar! Vuelve pronto" class="end-banner">
+  
+  <!-- Mensaje principal -->
+  <div class="banner-message">
+    <h3>🎮 ¡GRACIAS POR PASARTE POR MI RINCÓN RETRO! 🎮</h3>
+    
+    <div class="message-content">
+      <p>🚀 <strong>NO TE OLVIDES DE:</strong></p>
+      
+      <div class="reminders">
+        <div class="reminder-item">
+          <img src="images/cat1.gif" alt="Gatito">
+          <span>🎵 Lavarte el prepucio diariamente</span>
+        </div>
+        
+        <div class="reminder-item">
+          <img src="images/controller.gif" alt="Control">
+          <span>🎮 Jugar algo retro esta semana</span>
+        </div>
+        
+        <div class="reminder-item">
+          <img src="images/share_icon.gif" alt="Compartir">
+          <span>💀 Compartir este blog si te gustó</span>
+        </div>
+        
+        <div class="reminder-item">
+          <img src="images/cat2.gif" alt="Gatito">
+          <span>🐱 Darle amor a los gatitos GIF</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Contador especial -->
+    <div class="counter">
+      <img src="images/eye.gif" alt="Ojo">
+      <p>👁️ <strong>Eres el visitante número:</strong></p>
+      <p class="counter-number" id="finalCounter">001235</p>
+      <p class="counter-note">(¡Gracias por ser parte de la estadística!)</p>
+    </div>
+  </div>
+  
+  <!-- Separador decorativo -->
+  <div class="banner-separator">
+    <span>✦</span><span>✦</span><span>✦</span>
+  </div>
+  
+  <!-- Firmas y webring -->
+  <div class="signatures">
+    <div class="signature-main">
+      <img src="images/signature.gif" alt="Firma de Josu" class="signature-gif">
+      <div class="signature-text">
+        <p><strong>JosuBl0g</strong></p>
+        <p>Hecho con 💀 desde el año 2024</p>
+        <p class="tech-specs">HTML 4.01 • CSS 2.0 • JavaScript ES3</p>
+      </div>
+    </div>
+  
+    <!-- Último mensaje -->
+    <div class="final-message">
+      <p>¡VUELVE PRONTO! Ve a comer algo si mae 🍕🎮</p>
+      <p class="blink">⚠️ Vaya ni idea de como lo hice pero lo hice ⚠️</p>
+    </div>
+  </div>
+  
+  <!-- Línea decorativa inferior -->
+  <div class="banner-bottom-line">
+    <marquee behavior="scroll" direction="left" scrollamount="2">
+      🎵 MIDI activado • 🐱 Gatitos contados: 8 • 🎮 Juegos revisados: 5
+      📅 Última actualización: <span id="bannerDate"></span> • 🕐 Hora del servidor: <span id="bannerTime"></span> •
+    </marquee>
+  </div>
+</div>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="js/main.js"></script>
+</body>
+</html>
